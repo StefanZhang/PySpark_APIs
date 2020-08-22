@@ -33,6 +33,7 @@ if __name__ == '__main__':
         print(rdd2.reduceByKey(lambda x,y:x+y).collect())
         # rdd2 group by key first to: [('I', [1]), ('love', [1,1,1]), ('WPI', [1,1]), ('me', [1])]
         # Then reduce by key count x + y
+        # done
 
     my_reducebykey()
     sc.stop()
