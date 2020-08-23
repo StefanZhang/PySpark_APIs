@@ -33,7 +33,25 @@ if __name__ == '__main__':
         print(rdd2.reduceByKey(lambda x,y:x+y).collect())
         # rdd2 group by key first to: [('I', [1]), ('love', [1,1,1]), ('WPI', [1,1]), ('me', [1])]
         # Then reduce by key count x + y
-        # done
 
-    my_reducebykey()
+    def my_sortbykey():
+        rdd1 = sc.parallelize(["I love WPI", "WPI love me love"])
+        rdd2 = rdd1.flatMap(lambda line:line.split(" ")).map(lambda x:(x,1))
+        rdd3 = rdd2.reduceByKey(lambda x,y:x+y)
+        print(rdd3.map(lambda x:(x[1], x[0])).sortByKey(False).map(lambda x:(x[1], x[0])).collect())
+        # Flip the order first, then sortbykey, last flip the order back.
+
+    def my_union():
+        rdd1 = sc.parallelize([1,2,3])
+        rdd2 = sc.parallelize([4,5,6])
+        print(rdd1.union(rdd2).collect())
+
+    def my_dis():
+        rdd1 = sc.parallelize([1,2,3])
+        rdd2 = sc.parallelize([3,4,5])
+        print(rdd1.union(rdd2).distinct().collect())
+
+
+
+    my_dis()
     sc.stop()
