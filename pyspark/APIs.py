@@ -52,7 +52,7 @@ if __name__ == '__main__':
         print(rdd1.union(rdd2).distinct().collect())
 
     def my_actions():
-        data = [1,2,3,4,5,6,6,7,8,9,10]
+        data = [1,2,3,4,5,6,7,8,9,10]
         rdd = sc.parallelize(data)
         print(rdd.count())
         print(rdd.take(3))
