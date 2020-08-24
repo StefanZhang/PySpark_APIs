@@ -12,5 +12,5 @@ Spark：2.2.0-2.6.0-cdn5.7.0
 
 ###Usage:
 
-Experiment PySpark APIs
+Experimenting PySpark APIs
 
