@@ -28,8 +28,9 @@ if __name__ == '__main__':
 
     sc.stop()
 
-    # ./ spark - submit - -master
-    # local[2] - -name
-    # WC / root / scripts / WC.py
-    # file: // / root / data / hello.txt
-    # file: // / root / data / output
+    # ./spark-submit --master local[2]
+    # --name WC <../path/WC.py>
+
+
+    # file:// /root/data/hello.txt
+    # file:// /root/data/output
