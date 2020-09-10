@@ -27,3 +27,9 @@ if __name__ == '__main__':
     out.saveAsTextFile(sys.argv[2])
 
     sc.stop()
+
+    # ./ spark - submit - -master
+    # local[2] - -name
+    # WC / root / scripts / WC.py
+    # file: // / root / data / hello.txt
+    # file: // / root / data / output
